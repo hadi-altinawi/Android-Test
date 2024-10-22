@@ -1,0 +1,293 @@
+1) Which of the following statements is incorrect about Android builds?
+
+A) App Bundles are more memory-efficient than Android Application Package.
+B) apk file contains dex files in a zip format.
+C) .class files are combined into a single dex file.
+D) The JVM is responsible for executing dex files. (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+2) What is the issue with the given code?
+@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    BufferedReader reader = null;
+    try {
+        URL url = new URL("https://www.google.com");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        InputStream is = con.getInputStream();
+        reader = new BufferedReader(new InputStreamReader(is));
+        string line;
+        while((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+    } catch(Exception e) {
+        e.printStackTrace();
+    } finally {
+        if(null != reader) {
+            try {
+                reader.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+A) Android.os.NetworkOnMainThreadException will be thrown. (Correct answer) <---
+B) HttpURLConnection is not supported in Android.
+C) No Layout is assigned to the Activity in the onCreate method.
+D) All of the above.
+
+----------------------------------------------------------------------------------------------------
+
+3) Which of these activities will occur when a device is in Doze mode?
+
+A) High-priority FCM processing. (Correct answer) <---
+B) High-priority network activity from background services.
+C) Sync adapter processing.
+D) Wake lock processing.
+
+----------------------------------------------------------------------------------------------------
+
+4) Which of the following is responsible to notify UI Views when the database gets updated?
+
+A) ViewModel.
+B) LiveData. (Correct answer) <---
+C) Data Binding.
+D) Room.
+
+----------------------------------------------------------------------------------------------------
+
+5) Dalvik Debug Monitor Server is not capable of:
+
+A) Thread and heap information.
+B) Network traffic tracking.
+C) Find bugs in a component of an application. (Correct answer) <---
+D) Simulating network state, speed, and latency.
+
+----------------------------------------------------------------------------------------------------
+
+6) What is the best practice to track a device’s location over a long period of time?
+
+A) Start a long-running background process that calls getLastLocation() periodically.
+B) Start a long-running background process that calls requestLocationUpdates() and handle its callbacks via a LocationCallback object.
+C) Pass a PendingIntent to requestLocationUpdates() that will fire a BroadcastReceiver when the device’s location changes. (Correct answer) <---
+D) All of the above are acceptable techniques to track location over a long period of time.
+
+----------------------------------------------------------------------------------------------------
+
+7) Which of the following statementis not true about the Serializable interface in Android?
+
+A) Serializable is easier to implement and faster than parcelable interface. (Correct answer) <---
+B) Serializable interface creates a lot of redundant objects.
+C) Parcelable takes more time to implement than Serializable interface.
+D) Parcelable is more optimized and memory-efficient than Serializable interface.
+
+----------------------------------------------------------------------------------------------------
+
+8) What is true if "AndroidManifest.xml" of an application contains the following code?
+<uses-library android:required="true" android:name="com.google.android.maps"/>
+
+A) PackageManager framework won't let the user install the application unless the library "com.google.android.maps" is present on the user's device. (Correct answer) <---
+B) 'com.google.android.maps' will be included in the .apk file by Android Studio.
+C) Android will ask the user to download "com.google.android.maps" before running this application after installation.
+D) None of the above.
+
+----------------------------------------------------------------------------------------------------
+
+9) Which of the following is not a type of broadcast in the broadcast receiver?
+
+A) Normal Broadcasts.
+B) Ordered Broadcasts.
+C) Unordered broadcasts. (Correct answer) <---
+D) None of the above.
+
+----------------------------------------------------------------------------------------------------
+
+10) Which of the following is not a correct statement about fragments?
+
+A) A fragments defines its own layout and its own behavior with its own lifecycle callbacks.
+B) Fragments can be used in multiple activities.
+C) One fragment can be manipulated from another fragment.
+D) A fragment cannot be included within the activity layout. (Correct answer) <---
+E) None of the above.
+
+----------------------------------------------------------------------------------------------------
+
+11) Which of the following is not an interface of GestureDetector?
+
+A) OnContextListener.
+B) onDoubleTapListener.
+C) onGestureListener.
+D) onGestureDetectListener. (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+12) Which of the following is not a ContentProvider thatis natively provided by Android?
+
+A) The contacts list.
+B) The telephone log.
+C) The bookmarks.
+D) The application list. (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+13) Which of the following statementis incorrect aboutthe location permission (i.e. ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION)?
+
+A) The location permission should be requested from the app itself, not from its libraries.
+B) When the app is running in the background, the access notification should be a foreground service.
+C) The location permission should be requested at runtime in Lollipop devices. (Correct answer) <---
+D) The location permission should be requested as the app's core functionality.
+
+----------------------------------------------------------------------------------------------------
+
+14) What classes can be used to implement an app bar?
+
+A) AppBar.
+B) Toolbar.
+C) Both (a) and (b). (Correct answer) <---
+D) Neither (a) nor (b).
+
+----------------------------------------------------------------------------------------------------
+
+15) Which of these approaches follow best practice when using a long-running service from a broadcast receiver?
+
+A) In the onReceive() method, start the service and finish execution of the onReceive() method. (Correct answer) <---
+B) Option 1 is right because, broadcast receivers will have a time limit of 10 seconds. Establishing connection to a service may take more time. In the onReceive() method, start the service and bind to it.
+C) Start the background service at app startup; in the onReceive() method, bind to the service.
+D) Both (a) and (c) are acceptable best practices.
+
+----------------------------------------------------------------------------------------------------
+
+16) Which statement about Instant Apps is false?
+
+A) Instant apps must be packaged to less than 10MB in size.
+B) Instant apps can be launched from the Play Store, a website, a social media site, or an ad.
+C) All Android devices support Instant Apps. (Correct answer) <---
+D) All of these statements are true.
+
+----------------------------------------------------------------------------------------------------
+
+17) Which of these statements about ConstraintLayoutis false?
+
+A) ConstraintLayout can define complex UIs with a minimal number of nested views.
+B) Views within a ConstraintLayout can be chained to space evenly in a horizontal or vertical direction.
+C) A view within a ConstraintLayout must have at least one constraint. (Correct answer) <---
+D) ConstraintLayout supports positioning as a percentage of the overall layout width or height.
+
+----------------------------------------------------------------------------------------------------
+
+18) Which of the following class contains the sensor data?
+
+A) Sensor.
+B) SensorManager.
+C) SensorEvent. (Correct answer) <---
+D) SensorEventListener.
+
+----------------------------------------------------------------------------------------------------
+
+19) Which of the following is false about Bitmaps?
+
+A) Excess of bitmaps loading into memory causes OutofMemoryException. (Correct answer) <---
+B) Bitmaps should be loaded on the UI thread otherwise it will degrade the app’s performance.
+C) One needs to enable disk caching while handling multiple bitmaps.
+D) Glide helps in image caching thereby increasing the app’s performance.
+
+----------------------------------------------------------------------------------------------------
+
+20) When is the onCreate() method of a content provider called?
+
+A) When an application containing that content provider calls the content provider for the first time.
+B) When an application containing that content provider is loaded into memory for the first time.
+C) When an application containing that content provider is installed.
+D) When a client application first references the content provider using a ContentResolver. (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+21) Which of the following is not correct about the broadcast ACTION_BOOT_COMPLETED?
+
+A) This broadcast is only sent once during device boot.
+B) This broadcast can’t be registered implicitly while targeting API level 26 or higher. (Correct answer) <---
+C) Many apps need this broadcast to schedule jobs.
+D) None of the above.
+
+----------------------------------------------------------------------------------------------------
+
+22) Which of the following statementis false about build.gradle(app)?
+
+A) The multiDexEnabled attribute must be set to true to counter the DexArchiveMergerException.
+B) The compileSDKVersion determines the maximum SDK on which app can't be installed. (Correct answer) <---
+C) The keyword compile should not be used instead of implementation as compile is deprecated.
+D) The packageID will remain the same throughout the application irrespective of its build variants.
+
+----------------------------------------------------------------------------------------------------
+
+23) Which of the following is not a valid constant for HttpURLConnection class?
+
+A) HTTP_ACCEPTED.
+B) HTTP_BAD_GATEWAY.
+C) HTTP_BAD_METHOD.
+D) HTTP_TIMEOUT. (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+24) To start another activity from a fragment, the context should be _? Intentintent = new Intent(X, SomeActivity.class);
+
+A) getActivity(). (Correct answer) <---
+B) getApplicationContext().
+C) getBaseContext().
+D) this.
+
+----------------------------------------------------------------------------------------------------
+
+25) Which of the following density units is not based on the physical size of the android device?
+
+A) pt.
+B) mm.
+C) px. (Correct answer) <---
+D) in.
+
+----------------------------------------------------------------------------------------------------
+
+26) When is the onResume() method of an Activity called?
+
+A) When the Activity gains foreground. (Correct answer) <---
+B) When the Activity is first created.
+C) Both a) and b).
+D) None of the above
+
+----------------------------------------------------------------------------------------------------
+
+27) Which of the following actions leads to a strict-mode violation in android?
+
+A) Out of memory exception while handling multiple bitmaps.
+B) Networking access from UI thread. (Correct answer) <---
+C) Contacts and SMS permission at Runtime.
+D) Retrieving location updates in background service.
+
+----------------------------------------------------------------------------------------------------
+
+28) According to Android best practices, when is the besttime to ask a user for a permission needed by an app?
+
+A) All permissions that may be needed by the app in any circumstance should be requested when the app is opened for the first time.
+B) Permissions that are essential to the app’s functionality can be requested when the app is opened for the first time.
+C) Permissions should be requested when the user initiates an action that requires the permission.
+D) Both (b) and (c). (Correct answer) <---
+
+----------------------------------------------------------------------------------------------------
+
+29) In case of memory leaks, one should not:
+
+A) use Profiling to determine memory usage.
+B) manually call the garbage collection to further reduce the memory usage. (Correct answer) <---
+C) to use the least number of static variables throughout the application.
+D) reduce the usage of anonymous classes and inner classes.
+
+----------------------------------------------------------------------------------------------------
+
+30) Which tool allows developers to deal with zip-file compatible archives in Android Studio?
+
+A) ADB.
+B) AAPT. (Correct answer) <---
+C) Profiler. 
+D) Groovy Console.
